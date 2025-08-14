@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThoughtScape - Exploring the landscapes of mind, society, and spirit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__brand">
+                    <h1 class="logo">ThoughtScape</h1>
+                </div>
+                <div class="nav__links">
+                    <a href="#" class="nav__link" data-category="all">All</a>
+                    <a href="#" class="nav__link" data-category="Philosophy">Philosophy</a>
+                    <a href="#" class="nav__link" data-category="Society">Society</a>
+                    <a href="#" class="nav__link" data-category="Literature">Literature</a>
+                    <a href="#" class="nav__link" data-category="Life Essays">Life Essays</a>
+                    <button class="btn btn--primary btn--sm" id="writeBtn">Write</button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">Exploring the landscapes of mind, society, and spirit</h2>
+                <p class="hero__subtitle">A digital sanctuary for philosophical reflections, social observations, and literary explorations</p>
+                <div class="search-container">
+                    <input type="text" class="search-input form-control" placeholder="Search thoughts and ideas..." id="searchInput">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Blog Posts Grid -->
+            <section class="posts-section" id="postsSection">
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Posts will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <h3>No posts found</h3>
+                <p>Try adjusting your search or browse different categories.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Write Modal -->
+    <div class="modal hidden" id="writeModal">
+        <div class="modal__backdrop" id="modalBackdrop"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3 id="modalTitle">Write New Post</h3>
+                <button class="modal__close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal__body">
+                <form id="postForm">
+                    <div class="form-group">
+                        <label class="form-label" for="postTitle">Title</label>
+                        <input type="text" class="form-control" id="postTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="postCategory">Category</label>
+                        <select class="form-control" id="postCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="Philosophy">Philosophy</option>
+                            <option value="Society">Society</option>
+                            <option value="Literature">Literature</option>
+                            <option value="Life Essays">Life Essays</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="postExcerpt">Excerpt</label>
+                        <textarea class="form-control" id="postExcerpt" rows="3" placeholder="Brief summary of your post..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="postContent">Content</label>
+                        <textarea class="form-control" id="postContent" rows="12" placeholder="Share your thoughts..." required></textarea>
+                    </div>
+                    <div class="modal__actions">
+                        <button type="button" class="btn btn--outline" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn--primary" id="saveBtn">Publish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Read Modal -->
+    <div class="modal hidden" id="readModal">
+        <div class="modal__backdrop" id="readModalBackdrop"></div>
+        <div class="modal__content modal__content--large">
+            <div class="modal__header">
+                <button class="modal__close" id="closeReadModal">&times;</button>
+            </div>
+            <div class="modal__body">
+                <article class="article" id="articleContent">
+                    <!-- Article content will be inserted here -->
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <p>&copy; 2025 ThoughtScape. A space for contemplation and reflection.</p>
+                <p class="footer__note">Hosting tip: This can be easily deployed on AWS using S3 + CloudFront for a fast, scalable static website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
